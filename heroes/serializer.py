@@ -10,8 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class HeroesSerializer(serializers.ModelSerializer):
-    user = serializers.StringRelatedField(many=False)
+    #user = serializers.StringRelatedField(many=False)
 
     class Meta:
         model = Heroes
-        fields = ('id', 'user', 'date', 'body')
+        fields = ('id', 'user', 'name', 'description', 'picture',
+                  'level', 'race', 'hero_class', 'strength', 'dexterity', 'constitution',
+                  'intelligence', 'wisdom', 'charisma', 'hit_points')
