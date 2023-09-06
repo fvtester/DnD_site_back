@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link type = "text/css" href="{% static 'heroes/css/styles.css' %}" rel="stylesheet" />
+</head>
+<body>
+<h1>{{title}}</h1>
+<ul>
+    {%for ch in characters %}
+    <li><h2>{{ch.name}}</h2>
+    <p>{{ch.race}} {{ch.hero_class}}</p></li>
+    <p>{{ch.description|linebreaks|truncatewords:20}}</p>
+    <hr>
+    {% endfor %}
+</ul>
+</body>
+</html>
