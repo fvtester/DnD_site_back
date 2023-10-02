@@ -5,7 +5,7 @@ class Heroes(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    picture = models.ImageField(upload_to="images/%Y/%m/%d")
+    picture = models.ImageField(upload_to="images/%Y/%m/%d", null=True, blank=True)
     level = models.IntegerField()
     race = models.ForeignKey('Race', on_delete=models.PROTECT, null=True)
     hero_class = models.ForeignKey('HeroClass', on_delete=models.PROTECT, null=True)
